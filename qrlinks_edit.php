@@ -56,6 +56,10 @@ if ($mform->is_cancelled()) {
         unset($SESSION->qrlinkreturnurl);
     }
 
+    if (empty($returnurl)) {
+        $returnurl = new moodle_url('/local/qrlinks/manage.php');
+    }
+
     redirect($returnurl);
 
 } else if ($fromform = $mform->get_data()) {
